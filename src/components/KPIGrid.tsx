@@ -7,58 +7,49 @@ interface KPIGridProps {
 export function KPIGrid({ theme }: KPIGridProps) {
   const isDark = theme === 'dark'
 
-  const kpis = isDark
+  const items = isDark
     ? [
-        { label: 'ACCOUNTS', value: '50,412', sub: null },
-        { label: 'Q3 FORECAST P50 · RUN #470 · 06:07', value: '$63,962,532', sub: null },
-        { label: 'SPREAD P10–P90', value: '8.8%', sub: null },
-        { label: 'LOCKED IN · Q3', value: '$35.3M', sub: null },
+        { label: 'ACCOUNTS',                         value: '50,412',       size: 50 },
+        { label: 'Q3 FORECAST P50 · RUN #470 · 06:07', value: '$63,962,532', size: 29 },
+        { label: 'SPREAD P10–P90',                   value: '8.8%',         size: 32 },
+        { label: 'LOCKED IN · Q3',                   value: '$35.3M',       size: 29 },
       ]
     : [
-        { label: 'ACCOUNTS', value: '50,314', sub: null },
-        { label: 'Q3 FORECAST P50 · +$271K OVERNIGHT', value: '$61,725,259', sub: null },
-        { label: 'SPREAD P10–P90', value: '8.6%', sub: null },
-        { label: 'LOCKED IN · Q3', value: '$31.7 M', sub: null },
+        { label: 'ACCOUNTS',                         value: '50,314',       size: 50 },
+        { label: 'Q3 FORECAST P50 · +$271K OVERNIGHT', value: '$61,725,259', size: 29 },
+        { label: 'SPREAD P10–P90',                   value: '8.6%',         size: 32 },
+        { label: 'LOCKED IN · Q3',                   value: '$31.7 M',      size: 29 },
       ]
 
-  const valueSizes = ['53px', '30px', '33px', '30px']
-
   return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'stretch',
-      marginBottom: 18,
-      gap: 0,
-    }}>
-      {kpis.map((kpi, i) => (
+    <div style={{ display: 'flex', alignItems: 'stretch', marginBottom: 20 }}>
+      {items.map((item, i) => (
         <div key={i} style={{ display: 'flex', alignItems: 'stretch' }}>
           {i > 0 && (
             <div style={{
               width: 1,
               background: 'var(--border)',
-              margin: '0 36px',
-              alignSelf: 'stretch',
-              flexShrink: 0,
+              margin: '2px 34px',
             }} />
           )}
-          <div style={{ minWidth: i === 0 ? 110 : i === 1 ? 260 : i === 2 ? 130 : 150 }}>
+          <div>
             <div style={{
-              fontSize: 10.5,
+              fontSize: 10,
               fontWeight: 500,
-              letterSpacing: '0.12em',
+              letterSpacing: '0.13em',
               color: 'var(--muted)',
               textTransform: 'uppercase',
-              marginBottom: 5,
+              marginBottom: 4,
               whiteSpace: 'nowrap',
-            }}>{kpi.label}</div>
+            }}>{item.label}</div>
             <div style={{
-              fontSize: valueSizes[i],
-              fontWeight: i === 0 ? 400 : 400,
+              fontSize: item.size,
+              fontWeight: 400,
               color: 'var(--text)',
-              letterSpacing: i === 0 ? '-0.02em' : '-0.01em',
-              lineHeight: 1.1,
+              letterSpacing: '-0.02em',
+              lineHeight: 1.05,
               fontVariantNumeric: 'tabular-nums',
-            }}>{kpi.value}</div>
+            }}>{item.value}</div>
           </div>
         </div>
       ))}

@@ -12,23 +12,22 @@ export function ForecastHeader({ theme }: ForecastHeaderProps) {
       display: 'flex',
       alignItems: 'flex-start',
       justifyContent: 'space-between',
-      paddingTop: 28,
-      paddingBottom: 20,
+      paddingTop: 26,
+      paddingBottom: 22,
     }}>
-      {/* Left: title */}
       <div>
         <h1 style={{
-          fontSize: 28,
+          fontSize: 27,
           fontWeight: 600,
           color: 'var(--text)',
-          letterSpacing: '-0.02em',
-          lineHeight: 1.15,
-          marginBottom: 5,
+          letterSpacing: '-0.025em',
+          lineHeight: 1.1,
+          marginBottom: 6,
         }}>Forecast</h1>
         <div style={{
-          fontSize: 12,
+          fontSize: 11.5,
           color: 'var(--muted)',
-          letterSpacing: '0.01em',
+          letterSpacing: '0.005em',
         }}>
           {isDark
             ? 'Data as of Aug 30, 2026 · Run #470'
@@ -36,34 +35,35 @@ export function ForecastHeader({ theme }: ForecastHeaderProps) {
         </div>
       </div>
 
-      {/* Right: status card */}
+      {/* Status card */}
       <div style={{
-        width: 242,
+        width: 238,
         border: '1px solid var(--border)',
-        borderRadius: 12,
+        borderRadius: 11,
         background: 'var(--surface)',
-        padding: '10px 14px',
-        boxShadow: 'var(--card-shadow)',
+        padding: '11px 14px 10px',
+        boxShadow: isDark ? '0 1px 4px rgba(0,0,0,0.25)' : '0 1px 3px rgba(0,0,0,0.04)',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 3 }}>
           <div style={{
-            width: 7,
-            height: 7,
+            width: 6,
+            height: 6,
             borderRadius: '50%',
-            background: isDark ? 'var(--muted)' : '#4cbc7a',
+            background: isDark ? '#687070' : '#3dba72',
             flexShrink: 0,
+            marginTop: 1,
           }} />
           <span style={{
-            fontSize: 12.5,
+            fontSize: 12,
             fontWeight: 600,
             color: 'var(--text)',
+            letterSpacing: '-0.005em',
           }}>Claude · nightly forecast</span>
         </div>
         <div style={{
-          fontSize: 11,
+          fontSize: 10.5,
           color: 'var(--muted)',
-          paddingLeft: 15,
-          letterSpacing: '0.01em',
+          paddingLeft: 14,
         }}>
           {isDark
             ? 'Scheduled 3:00 AM · est 3h 10m'

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -7,51 +7,33 @@
 }
 
 :root {
-  --page-bg: #f0f6f8;
-  --nav-bg: #e6f1f3;
+  --page-bg: #eef5f7;
+  --nav-bg: #e4f0f2;
   --surface: #ffffff;
-  --surface-secondary: #f9fbfc;
-  --border: #dde4e7;
-  --border-light: #e8edef;
-  --text: #111516;
-  --text-secondary: #1d2527;
-  --muted: #8b9699;
-  --subtle: #a7b0b3;
-  --accent: #5ab0be;
-  --forecast-line: #76b8c4;
-  --forecast-fill: rgba(118, 184, 196, 0.10);
-  --grid: rgba(20, 30, 35, 0.05);
+  --border: #dce3e6;
+  --border-light: #e8edf0;
+  --text: #0f1415;
+  --muted: #8c9799;
+  --subtle: #a8b1b4;
+  --nav-border: #d4e0e3;
   --card-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  --nav-border: #d5e2e5;
-
-  --seasonal: #72b8ac;
-  --erratic: #d48fa6;
-  --step: #a39bd6;
-  --plateau: #eca851;
-  --linear: #7ea8d1;
 }
 
 [data-theme="dark"] {
-  --page-bg: #101313;
-  --nav-bg: #101313;
-  --surface: #161a1a;
-  --surface-secondary: #121515;
-  --border: #252929;
-  --border-light: #1e2222;
-  --text: #f0f2f2;
-  --text-secondary: #d4d8d8;
-  --muted: #7b8182;
-  --subtle: #565d5e;
-  --accent: #62a8b4;
-  --forecast-line: #5490a0;
-  --forecast-fill: rgba(70, 110, 118, 0.07);
-  --grid: rgba(255, 255, 255, 0.035);
-  --card-shadow: 0 1px 4px rgba(0,0,0,0.3);
-  --nav-border: #1e2222;
+  --page-bg: #0e1212;
+  --nav-bg: #0e1212;
+  --surface: #141818;
+  --border: #242828;
+  --border-light: #1c2020;
+  --text: #eff1f1;
+  --muted: #7a8282;
+  --subtle: #545c5c;
+  --nav-border: #1c2020;
+  --card-shadow: 0 1px 5px rgba(0,0,0,0.3);
 }
 
-body {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+html, body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif;
   background: var(--page-bg);
   color: var(--text);
   font-size: 14px;

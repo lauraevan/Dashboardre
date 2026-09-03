@@ -5,7 +5,6 @@ import { ForecastHeader } from './components/ForecastHeader'
 import { KPIGrid } from './components/KPIGrid'
 import { PortfolioChart } from './components/PortfolioChart'
 import { ForecastCards } from './components/ForecastCards'
-import { ClassificationCard } from './components/ClassificationCard'
 import { Footer } from './components/Footer'
 
 export type Theme = 'light' | 'dark'
@@ -21,7 +20,6 @@ export default function App() {
         <KPIGrid theme={theme} />
         <PortfolioChart theme={theme} />
         <ForecastCards theme={theme} />
-        <ClassificationCard theme={theme} />
       </main>
       <Footer theme={theme} />
     </div>

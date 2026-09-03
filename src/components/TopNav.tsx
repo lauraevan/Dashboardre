@@ -10,52 +10,52 @@ export function TopNav({ theme, onThemeToggle }: TopNavProps) {
 
   return (
     <nav style={{
-      height: 58,
+      height: 56,
       background: 'var(--nav-bg)',
       borderBottom: '1px solid var(--nav-border)',
       display: 'flex',
       alignItems: 'center',
       padding: '0 48px',
-      gap: 0,
     }}>
       {/* Logo */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginRight: 36 }}>
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <path d="M11 2C6.03 2 2 6.03 2 11s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm-1 14.5V5.5c3.59.49 6.35 3.56 6.35 7.13S13.59 16.01 10 16.5z"
-            fill={isDark ? '#5ec8d8' : '#3aabb8'} />
+      <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginRight: 38 }}>
+        {/* Crescent-like icon */}
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="10" r="8" stroke={isDark ? '#4ec8d8' : '#29a0ae'} strokeWidth="1.5" fill="none"/>
+          <path d="M10 2.5C7.5 2.5 5.3 4.0 4.2 6.2C5.1 5.8 6.2 5.5 7.5 5.5C11.6 5.5 14.5 8.4 14.5 12.5C14.5 13.8 14.2 14.9 13.8 15.8C15.9 14.7 17.5 12.5 17.5 10C17.5 5.9 14.1 2.5 10 2.5Z"
+            fill={isDark ? '#4ec8d8' : '#29a0ae'}/>
         </svg>
         <span style={{
-          fontSize: 15,
+          fontSize: 14.5,
           fontWeight: 600,
-          color: isDark ? '#5ec8d8' : '#2a9baa',
-          letterSpacing: '-0.01em',
+          color: isDark ? '#4ec8d8' : '#29a0ae',
+          letterSpacing: '-0.02em',
         }}>Goodcast</span>
         <span style={{
-          fontSize: 9,
-          fontWeight: 600,
-          letterSpacing: '0.10em',
-          color: isDark ? '#5ec8d8' : '#2a9baa',
-          border: `1px solid ${isDark ? '#5ec8d8' : '#2a9baa'}`,
+          fontSize: 8.5,
+          fontWeight: 700,
+          letterSpacing: '0.08em',
+          color: isDark ? '#4ec8d8' : '#29a0ae',
+          border: `1.5px solid ${isDark ? '#4ec8d8' : '#29a0ae'}`,
           borderRadius: 4,
-          padding: '1px 5px',
-          lineHeight: '14px',
+          padding: '1px 4px',
+          lineHeight: '13px',
           textTransform: 'uppercase',
         }}>TURBO</span>
       </div>
 
       {/* Nav links */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 4, flex: 1 }}>
+      <div style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
         {['Overview', 'Accounts', 'Forecast', 'Reports'].map(link => {
           const active = link === 'Forecast'
           return (
-            <div key={link} style={{ position: 'relative', padding: '0 14px' }}>
+            <div key={link} style={{ position: 'relative', padding: '0 15px', height: 56, display: 'flex', alignItems: 'center' }}>
               <span style={{
-                fontSize: 13.5,
-                fontWeight: active ? 600 : 400,
+                fontSize: 13,
+                fontWeight: active ? 500 : 400,
                 color: active ? 'var(--text)' : 'var(--muted)',
                 cursor: 'pointer',
-                lineHeight: '58px',
-                display: 'block',
+                userSelect: 'none',
               }}>{link}</span>
               {active && (
                 <div style={{
@@ -63,7 +63,7 @@ export function TopNav({ theme, onThemeToggle }: TopNavProps) {
                   bottom: 0,
                   left: '50%',
                   transform: 'translateX(-50%)',
-                  width: 52,
+                  width: 48,
                   height: 2,
                   background: 'var(--text)',
                   borderRadius: '2px 2px 0 0',
@@ -74,51 +74,50 @@ export function TopNav({ theme, onThemeToggle }: TopNavProps) {
         })}
       </div>
 
-      {/* Right: Search + Ask + Theme toggle */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+      {/* Right controls */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          height: 34,
-          width: 200,
+          height: 32,
+          width: 192,
           border: '1px solid var(--border)',
-          borderRadius: 8,
+          borderRadius: 7,
           background: 'var(--surface)',
-          padding: '0 10px',
-          gap: 6,
+          padding: '0 9px',
+          gap: 7,
         }}>
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" style={{ flexShrink: 0 }}>
-            <circle cx="5.5" cy="5.5" r="4.5" stroke="var(--muted)" strokeWidth="1.2" />
-            <line x1="9" y1="9" x2="12" y2="12" stroke="var(--muted)" strokeWidth="1.2" strokeLinecap="round" />
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ flexShrink: 0, opacity: 0.5 }}>
+            <circle cx="5" cy="5" r="3.8" stroke="currentColor" strokeWidth="1.2" />
+            <line x1="8" y1="8" x2="11" y2="11" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
           </svg>
-          <span style={{ fontSize: 12.5, color: 'var(--subtle)', flex: 1 }}>Search accounts...</span>
+          <span style={{ fontSize: 12, color: 'var(--subtle)' }}>Search accounts...</span>
         </div>
         <button style={{
-          height: 34,
-          padding: '0 14px',
+          height: 32,
+          padding: '0 12px',
           border: '1px solid var(--border)',
-          borderRadius: 8,
+          borderRadius: 7,
           background: 'var(--surface)',
           color: 'var(--text)',
-          fontSize: 12.5,
+          fontSize: 12,
           fontWeight: 500,
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',
-          gap: 6,
+          gap: 5,
           fontFamily: 'inherit',
         }}>
           Ask
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M6 1l1.2 2.8 2.8.2-2.1 1.9.7 2.8L6 7.3 3.4 8.7l.7-2.8L2 3.9l2.8-.1L6 1z"
-              fill={isDark ? '#5ec8d8' : '#3aabb8'} />
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+            <path d="M5.5.9l1.1 2.5 2.5.2-1.9 1.7.6 2.5L5.5 6.6 3.2 7.8l.6-2.5L2 3.6l2.4-.1L5.5.9z"
+              fill={isDark ? '#4ec8d8' : '#29a0ae'} />
           </svg>
-          <span style={{ fontSize: 10.5, color: 'var(--muted)', fontFamily: 'monospace', marginLeft: 2 }}>⌘K</span>
+          <span style={{ fontSize: 10, color: 'var(--subtle)', fontFamily: 'monospace', marginLeft: 1 }}>⌘K</span>
         </button>
-        {/* Theme toggle */}
         <button onClick={onThemeToggle} style={{
-          height: 30,
-          width: 30,
+          height: 32,
+          width: 32,
           border: '1px solid var(--border)',
           borderRadius: 7,
           background: 'var(--surface)',
@@ -127,7 +126,8 @@ export function TopNav({ theme, onThemeToggle }: TopNavProps) {
           alignItems: 'center',
           justifyContent: 'center',
           color: 'var(--muted)',
-          fontSize: 14,
+          fontSize: 13,
+          fontFamily: 'inherit',
         }} title="Toggle theme">
           {isDark ? '☀' : '◑'}
         </button>
